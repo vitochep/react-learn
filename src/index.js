@@ -1,7 +1,4 @@
 
-
-
-
 //Task 1
 const Minutes = new Date().getMinutes();
 
@@ -47,6 +44,7 @@ if (parseInt(inputValue) === min || Minutes === parseInt(inputValue)){
 else {
     alert("Ничего не происходит");
 }
+//
 
 
 //Task 3
@@ -97,6 +95,7 @@ const currentOnlyMonth = new Date().getMonth();
 console.log(currentOnlyMonth);
 
 let TrueMonth = currentOnlyMonth + 1;
+console.log (TrueMonth);
 
 let sumDateNotFull = '0' + String(currentDay) + '.' + '0' + String(TrueMonth);
 console.log(sumDateNotFull);
@@ -104,3 +103,6 @@ console.log(sumDateNotFull);
 if (sumDateNotFull === '07.04') {
     alert('Тоже совпадает');
 }
+//
+
+
