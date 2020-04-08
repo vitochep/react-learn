@@ -117,5 +117,5 @@ const currentFull = currentOnlyDate + ',' + currentOnlyTime;
 console.log(currentFull);
 
 if (currentFull >= '15.12, 14:00:30' && currentFull < '15.12, 14:01:00') {
-    alert('Вреия  тоже совпадает');
+    alert('Время  тоже совпадает');
 }
