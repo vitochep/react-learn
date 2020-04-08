@@ -64,7 +64,7 @@ if (inputValueNumber === 59 && Minutes === 59 && Second <= 45) {
 const currentTime = new Date().toTimeString().slice(0, 5);
 console.log(currentTime);
 
-if (currentTime === "17:11") {
+if (currentTime === "18:12") {
     alert('Время совпадает')
 }
 
@@ -100,7 +100,7 @@ console.log (TrueMonth);
 let sumDateNotFull = '0' + String(currentDay) + '.' + '0' + String(TrueMonth);
 console.log(sumDateNotFull);
 
-if (sumDateNotFull === '07.04') {
+if (sumDateNotFull === '14.01') {
     alert('Тоже совпадает');
 }
 //
@@ -116,6 +116,6 @@ console.log(currentOnlyTime);
 const currentFull = currentOnlyDate + ',' + currentOnlyTime;
 console.log(currentFull);
 
-if (currentFull >= '08.04, 20:42:30' && currentFull < '08.04, 20:43:00') {
-    alert('Вреия совпадает');
+if (currentFull >= '15.12, 14:00:30' && currentFull < '15.12, 14:01:00') {
+    alert('Вреия  тоже совпадает');
 }
