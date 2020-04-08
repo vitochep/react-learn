@@ -106,3 +106,16 @@ if (sumDateNotFull === '07.04') {
 //
 
 
+//Task 7
+const currentOnlyDate = new Date().toLocaleString().slice(0, 5);
+console.log(currentOnlyDate);
+
+const currentOnlyTime = new Date().toLocaleString().slice(11, 20);
+console.log(currentOnlyTime);
+
+const currentFull = currentOnlyDate + ',' + currentOnlyTime;
+console.log(currentFull);
+
+if (currentFull >= '08.04, 20:42:30' && currentFull < '08.04, 20:43:00') {
+    alert('Вреия совпадает');
+}
