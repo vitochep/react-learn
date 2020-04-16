@@ -1,5 +1,5 @@
 import React from 'react';
-import * as routes from 'routes/index.js';
+import * as routes from './../routes/index.js';
 
 const names = [
 	'Main',
@@ -12,6 +12,7 @@ class App extends React.Component {
 			const Component = routes[moduleName];
 
 			return <Component key={i} />;
+
 		});
 	};
 };
