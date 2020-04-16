@@ -1,5 +1,7 @@
 import React from 'react';
 import * as routes from './../routes/index.js';
+import './../index.css';
+
 
 const names = [
 	'Main',

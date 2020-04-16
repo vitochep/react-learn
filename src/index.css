@@ -1,4 +1,65 @@
+body{
 
-.test {
-	color: red;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin:    0 auto;
+    padding:   25px;
+}
+
+.avatar {
+    width: 250px;
+margin-bottom: 40px;
+}
+
+.image-wrap {
+    position:       relative;
+    padding-bottom: 140%;
+
+}
+
+.image-item {
+    position:        absolute;
+    object-fit:      cover;
+    object-position: center;
+    width:           100%;
+    height:          100%;
+    top:             0;
+    left:            0;
+}
+
+.inputName {
+    padding: 0 0 20px 0;
+    width: 250px;
+    height: 30px;
+}
+
+.name, .mail{
+    width: 250px;
+    height: 30px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 100%;
+    font-weight: 400;
+    outline: none;
+    border: 1px solid #000000;
+
+}
+
+.inputMail {
+    padding: 0 0 20px 0;
+    width: 250px;
+    height: 30px;
+}
+
+
+.buttonSave {
+background-color: red;
+    width: 250px;
+    height: 30px;
+    border-radius: 2px;
 }
