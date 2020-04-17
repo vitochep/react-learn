@@ -11,6 +11,7 @@ class Account extends React.Component {
                             <img className='image-item'
                                  src="https://cs9.pikabu.ru/post_img/2017/05/12/8/1494592816133830021.jpg"
                                  alt="Здесь должна быть аватарка"/>
+                            <input className='image-input' type="file"/>
                         </div>
                     </div>
                     <div className="container-right">
