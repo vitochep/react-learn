@@ -127,10 +127,10 @@ input {
     border:           none;
 }
 
-/*.input_item:focus {*/
-/*    max-width:  300px;*/
-/*    transition: 1s ease;*/
-/*}*/
+.input_item:focus {
+    max-width:  300px;
+    transition: 3s ease;
+}
 
 
 .buttonSend {
