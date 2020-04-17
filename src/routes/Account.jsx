@@ -12,7 +12,7 @@ class Account extends React.Component {
                         </div>
                     </div>
                     <div className="inputs-content">
-                        <div className="input-wrap">
+                        <div className="input-wrap mod-name">
                             <span className='input-title'>Имя и Фамилия</span>
                             <input className='input_item' type="text"/>
                         </div>
