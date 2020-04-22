@@ -19,26 +19,7 @@ input {
     outline:     none;
 }
 
-.account-title {
-    font-size:   30px;
-    max-width:   1100px;
-    text-align:  center;
-    margin:      0 auto;
-    font-weight: bold;
-
-}
-
 .main-container {
-    max-width:        1100px;
-    background-color: #fff;
-    margin:           100px auto 0;
-    padding:          20px;
-    border-radius:    5px;
-    overflow:         hidden;
-
-    display:          flex;
-    align-items:      flex-start;
-    justify-content:  flex-start;
 
     @media (min-width: 1200px) {
 
