@@ -1,6 +1,6 @@
 import React from 'react';
 import * as routes from './../routes/index.js';
-import './../index.css';
+import './../app.scss';
 
 
 const names = [

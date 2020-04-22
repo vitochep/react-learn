@@ -45,6 +45,11 @@ input {
     display:          flex;
     align-items:      flex-start;
     justify-content:  flex-start;
+
+    @media (min-width: 1200px) {
+
+    }
+
 }
 
 .avatar {
@@ -72,16 +77,16 @@ input {
 
 .image-input {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-    border: none;
+    top:      0;
+    right:    0;
+    bottom:   0;
+    left:     0;
+    display:  block;
+    width:    100%;
+    height:   100%;
+    opacity:  0;
+    cursor:   pointer;
+    border:   none;
 }
 
 .container-right {
