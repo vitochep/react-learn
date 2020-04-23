@@ -2,7 +2,7 @@ import React from 'react';
 // import styled from 'styled-components'
 import Section from './../components/Section/Section'
 import Title from './../components/Title/Title'
-import Content from './../components/Content/Content'
+import {Flex as FlexWrapper} from './../components/Content'
 
 // const Div = styled.div`
 // padding: ${(props)=> props.active ? '10px': '0'};
@@ -24,8 +24,9 @@ class Account extends React.Component {
                 <Title>
                     Персональные данные
                 </Title>
-                <Content>
-                </Content>
+                <FlexWrapper>
+
+                </FlexWrapper>
             </Section>
         </>;
     };

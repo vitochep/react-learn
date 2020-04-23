@@ -1,6 +1,6 @@
 
 import styled from 'styled-components';
-import Content from "./Content";
+import Content from "./Content.jsx";
 
 
 const Flex = styled(Content)`
