@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import ImageWrap from "./ImageWrap.jsx";
+import Image from "./Image.jsx";
+import InputAvatar from "./Input.jsx";
 
 
 const AvatarWrapper = styled.div`
@@ -14,7 +16,10 @@ const AvatarWrapper = styled.div`
 class Avatar extends React.Component {
     render = () => {
         return <AvatarWrapper>
-            <ImageWrap/>
+            <ImageWrap>
+                <Image />
+             <InputAvatar type="file" name="avatar" />
+            </ImageWrap>
         </AvatarWrapper>;
     };
 }
