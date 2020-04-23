@@ -6,5 +6,4 @@ export default Content
 
 export{
     Flex
-
 }

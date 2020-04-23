@@ -2,7 +2,8 @@ import React from 'react';
 // import styled from 'styled-components'
 import Section from './../components/Section/Section'
 import Title from './../components/Title/Title'
-import {Flex as FlexWrapper} from './../components/Content'
+import {Flex as FlexWrapper}  from './../components/Content/Flex'
+import Avatar from './../components/Avatar/Avatar'
 
 // const Div = styled.div`
 // padding: ${(props)=> props.active ? '10px': '0'};
@@ -25,7 +26,7 @@ class Account extends React.Component {
                     Персональные данные
                 </Title>
                 <FlexWrapper>
-
+                    <Avatar/>
                 </FlexWrapper>
             </Section>
         </>;
