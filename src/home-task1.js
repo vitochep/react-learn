@@ -151,3 +151,16 @@
 //     </Div>
 //
 //     </div>;
+
+
+// const Div = styled.div`
+// padding: ${(props)=> props.active ? '10px': '0'};
+//
+//
+//
+// `;
+//
+// const Avatar = styled(Div)`
+// display: block;
+// margin-bottom: 20px;
+// `
