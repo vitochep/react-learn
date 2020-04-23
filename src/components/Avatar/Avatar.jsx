@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import ImageWrap from "./ImageWrap.jsx";
-import Image from "./Image.jsx";
 import InputAvatar from "./Input.jsx";
 
 
@@ -13,15 +12,29 @@ const AvatarWrapper = styled.div`
 `;
 
 
-class Avatar extends React.Component {
+export default class Avatar extends React.Component {
+    state = {
+        src: ""
+    };
+
+    onChange = (e) => {
+        const reader = new FileReader();
+
+        reader.readAsDataURL(e.currentTarget.files[0]);
+        reader.onload = () => {
+            console.log('e', reader.result);
+            this.setState({
+                'src': reader.result
+            })
+        };
+    };
     render = () => {
         return <AvatarWrapper>
             <ImageWrap>
-                <Image />
-             <InputAvatar type="file" name="avatar" />
+              <img src={this.state.src} alt={""} />
+             <InputAvatar type="file" name="avatar" onChange={this.onChange} />
             </ImageWrap>
         </AvatarWrapper>;
     };
 }
 
-export default Avatar;

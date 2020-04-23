@@ -14,4 +14,6 @@ const InputAvatar = styled.input`
     border:   none;
 `;
 
-export default InputAvatar;
+export  default InputAvatar;
+
+
