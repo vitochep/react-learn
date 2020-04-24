@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import InputWrapper from "./../Inputs/InputWrapper"
+import InputTitleName from "./../Inputs/InputTitleName"
 
 
 
 const FormWrapper = styled.div`
     width: 100%;
     
-    &.ContentForms{
+    .ContentForms{
     width:           100%;
     display:         flex;
     align-items:     center;
@@ -18,10 +19,13 @@ const FormWrapper = styled.div`
 `;
 
 
+
 export default class Forms extends React.Component {
     render = () => {
         return <FormWrapper>
-            <div className={'ContentForms'}>
+            <div className='ContentForms'>
+                <InputWrapper name={1} />
+                <InputTitleName />
                 <InputWrapper />
             </div>
         </FormWrapper>;
