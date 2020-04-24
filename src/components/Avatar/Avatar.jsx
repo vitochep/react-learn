@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ImageWrap from "./ImageWrap.jsx";
-import InputAvatar from "./Input.jsx";
+import InputAvatar from "./InputAvatar.jsx";
 
 
 const AvatarWrapper = styled.div`
