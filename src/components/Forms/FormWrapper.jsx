@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import InputWrapper from "./../Inputs/InputWrapper"
-import InputTitleName from "./../Inputs/InputTitleName"
+import Name from "./../Inputs/Name"
+import Email from "./../Inputs/Email"
+
 
 
 
@@ -24,9 +26,13 @@ export default class Forms extends React.Component {
     render = () => {
         return <FormWrapper>
             <div className='ContentForms'>
-                <InputWrapper name={1} />
-                <InputTitleName />
-                <InputWrapper />
+                <InputWrapper name={1}>
+                    <Name></Name>
+                </InputWrapper>
+
+                <InputWrapper>
+                    <Email></Email>
+                </InputWrapper>
             </div>
         </FormWrapper>;
     };

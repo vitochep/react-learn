@@ -1,14 +1,12 @@
 import React from 'react';
 import styled from 'styled-components'
+import Name from './Name'
 
 
 const InputWrapper = styled.div`
     width: 100%;
     
-    //&.mod-name {
-    //margin-right: 30px;
-    //} 
-    margin-right: ${(props)=> props.name ? '0': '30px'};
+    margin-right: ${(props)=> props.name ? '30px': '0'};
     
 `;
 
@@ -16,7 +14,7 @@ const InputWrapper = styled.div`
 export default class Wrap extends React.Component {
     render = () => {
         return <InputWrapper>
-
+<Name></Name>
         </InputWrapper>;
     };
 }
