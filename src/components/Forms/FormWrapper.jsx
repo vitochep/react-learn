@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import InputWrapper from "./../Inputs/InputWrapper"
 import Name from "./../Inputs/Name"
-import Email from "./../Inputs/Email"
-
-
 
 
 const FormWrapper = styled.div`
@@ -20,20 +16,29 @@ const FormWrapper = styled.div`
     }
 `;
 
+const InputWrapper = styled.div`
+    width: 100%;
+
+    margin-right: ${(props)=> props.name ? '30px': '0'};
+
+`;
 
 
 export default class Forms extends React.Component {
     render = () => {
         return <FormWrapper>
             <div className='ContentForms'>
-                <InputWrapper name={1}>
-                    <Name></Name>
+                <InputWrapper name={true}>
+                    <Name title={'Имя и фамилия'} />
                 </InputWrapper>
 
                 <InputWrapper>
-                    <Email></Email>
+                    <Name title={'Email'} />
                 </InputWrapper>
             </div>
         </FormWrapper>;
     };
 }
+
+
+
