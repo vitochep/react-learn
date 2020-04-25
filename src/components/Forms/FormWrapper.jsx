@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Name from "./../Inputs/Name"
+import Input from "./../Inputs/Input"
+import ButtonSend from "./../ButtonSend/ButtonSend"
 
 
 const FormWrapper = styled.div`
@@ -30,12 +32,15 @@ export default class Forms extends React.Component {
             <div className='ContentForms'>
                 <InputWrapper name={true}>
                     <Name title={'Имя и фамилия'} />
+                    <Input/>
                 </InputWrapper>
 
                 <InputWrapper>
                     <Name title={'Email'} />
+                    <Input/>
                 </InputWrapper>
             </div>
+            <ButtonSend />
         </FormWrapper>;
     };
 }
