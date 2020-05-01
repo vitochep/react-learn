@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Name from "./../Inputs/Name"
 import Input from "./../Inputs/Input"
-import ButtonSend from "./../ButtonSend/ButtonSend"
+import ButtonSend from "./../Button/ButtonSend"
 
 
 const FormWrapper = styled.div`
