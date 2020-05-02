@@ -37,3 +37,5 @@ export default class AccordeonItem extends React.Component {
 //Второй вариант использования пропса в дочернем компоненте:
 //вместо {this.props.children} прокидывается кастомный параметр name.
 //  {this.props.itemDisplay && <ItemText>{this.props.name}</ItemText>}
+
+

@@ -45,4 +45,7 @@ export default class Forms extends React.Component {
 }
 
 
-
+//  margin-right: ${(props)=> props.name ? '30px': '0'};
+//Запись означает, что параметры пропсы InputWrapper принимают параметр name, в  которое
+// из условия придетают или  30px(true) или 0(false).В компоненте
+//может быть true или false соответственно и выгдялдит так  <InputWrapper name={true}>
