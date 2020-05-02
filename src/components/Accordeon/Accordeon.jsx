@@ -37,3 +37,11 @@ export default class Accordeon extends React.Component {
         </>
     }
 }
+
+{/*//Второй вариант использования пропсов - параметров дочернего элемента. */}
+{/*//В открывающий тег AccordeonItem записывается кастомный пропс name со значением {item}*/}
+{/*// {this.textsArr.map((item, i) =>*/}
+{/*//     <AccordeonItem name={item} itemDisplay={this.state.itemDisplay === i}*/}
+{/*//                    onDisplayProp={()=> this.onDisplayMethod(i)}*/}
+{/*//                    key={i}*/}
+{/*//     />)}*/}

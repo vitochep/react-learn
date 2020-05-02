@@ -28,7 +28,12 @@ export default class AccordeonItem extends React.Component {
     render = () => {
         return <ItemWrap>
             <ItemButton onClick={this.props.onDisplayProp}>Открыть</ItemButton>
-            {this.props.itemDisplay && <ItemText>{this.props.children}</ItemText>}
+            {this.props.itemDisplay && <ItemText>{this.props.name}</ItemText>}
         </ItemWrap>
     }
 }
+
+
+//Второй вариант использования пропса в дочернем компоненте:
+//вместо {this.props.children} прокидывается кастомный параметр name.
+//  {this.props.itemDisplay && <ItemText>{this.props.name}</ItemText>}

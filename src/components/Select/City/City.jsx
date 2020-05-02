@@ -3,29 +3,26 @@ import styled from 'styled-components';
 import Select from './../Select';
 
 
-const Wrapper = styled(Select)`
+const Wrapper = styled.div`
 color: red;
 `;
 
 const cities = [
     'Mariupol',
-    // 'Kiev',
-    // 'Poltava',
-    // 'Odessa',
+    'Kiev',
+    'Poltava',
+    'Odessa',
 ];
-
-const Content = cities.map((nameCity, i) => <h1 key={i}>{nameCity}</h1>);
 
 
 export default class City extends React.Component {
-    state = {
-        display: true,
-    };
+
 
     render = () => {
         return <Wrapper>
-            {Content}
+       <Select>dfmgd'jdfkg</Select>
         </Wrapper>
     }
 };
 
+const Content = cities.map((nameCity, i) => <h1 key={i}>{nameCity}</h1>);
