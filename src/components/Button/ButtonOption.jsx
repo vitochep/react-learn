@@ -1,9 +1,9 @@
-import React from 'react';
+
 import styled from 'styled-components';
 import Button from './Button';
 
 
-const Wrapper = styled(Button)`
+const ButtonOption = styled(Button)`
     background-color: grey;
 
     &:hover{
@@ -13,11 +13,4 @@ const Wrapper = styled(Button)`
 `;
 
 
-export default class ButtonOption extends React.Component {
-
-    render = () => {
-        return <Wrapper>
-
-        </Wrapper>;
-    };
-}
+export default ButtonOption

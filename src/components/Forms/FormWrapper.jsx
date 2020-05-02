@@ -20,7 +20,6 @@ const FormWrapper = styled.div`
 
 const InputWrapper = styled.div`
     width: 100%;
-
     margin-right: ${(props)=> props.name ? '30px': '0'};
 
 `;
