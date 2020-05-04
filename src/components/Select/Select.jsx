@@ -61,7 +61,8 @@ export default class Select extends React.Component {
                         })
                     : <ButtonOption onClick={this.onClickItem(0)}>
                         {this.props.children}
-                    </ButtonOption>
+                    </ButtonOption> // В противном случае, если это не массив, то при клике записать текст из
+                                    // объекта
                 : <React.Fragment />}
         </React.Fragment>
 
