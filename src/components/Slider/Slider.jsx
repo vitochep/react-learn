@@ -60,7 +60,9 @@ export default Slider
 //     }
 //Таким образом можно получать и смотреть  свойства компонента, которыми потом нужно манипулдировать
 
-
+//      x: x + currentTarget.nextSibling.clientWidth
+//Изменение state x, прибавлением к нему currentTarget.nextSibling.clientWidth
+//передаётся в виде пропса в  propX={x}
 
 //{this.onNext} {this.onPrev}
 //указывает на кастомный метод, который срабатывает по клику
