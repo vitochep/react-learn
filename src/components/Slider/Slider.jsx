@@ -13,8 +13,12 @@ class Slider extends React.PureComponent {
         const currentTarget = e.currentTarget;
 
         this.setState(({x}) => ({
-            x: x - (currentTarget.previousSibling.clientWidth)
+            x: x - (currentTarget.previousSibling.childNodes[0].clientWidth)
         }))
+        
+        console.log('currentTarget.previousSibling.clientWidth', currentTarget.previousSibling.clientWidth)
+        console.log('currentTarget.previousSibling', currentTarget.previousSibling)
+        console.log('currentTarget', currentTarget)
     }
 
     render = () => {
@@ -25,10 +29,10 @@ class Slider extends React.PureComponent {
                 {/*<ButtonSlider onClick={this.onClick}>*/}
                 {/*    prev*/}
                 {/*</ButtonSlider>*/}
-                <Row x={x}>
+                <Row propX={x}>
                     <Slide color='red'></Slide>
-                    <Slide color={'green'}></Slide>
-                    <Slide color={'blue'}></Slide>
+                    <Slide color='green'></Slide>
+                    <Slide color='blue'></Slide>
                 </Row>
                 <ButtonSlider onClick={this.onClick}>
                     next

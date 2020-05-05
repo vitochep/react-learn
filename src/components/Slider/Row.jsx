@@ -5,7 +5,7 @@ const Row = styled(Block)`
 	width: ${({ children }) => children.length * 100}%;
 	height: 100%;
 	transition: .8s;
-	transform: translate(${({ x = 0 }) => x +'px'}, 0px);
+	transform: translate(${({ propX = 0 }) => propX +'px'}, 0px);
 	
 	${(props)=> console.log('props', props )}
 
