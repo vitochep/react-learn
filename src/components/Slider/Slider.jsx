@@ -9,35 +9,43 @@ class Slider extends React.PureComponent {
         x: 0,
     };
 
-    onClick = (e) => {
+    onPrev = (e) => {
         const currentTarget = e.currentTarget;
 
         this.setState(({x}) => ({
-            x: x - (currentTarget.previousSibling.childNodes[0].clientWidth)
+            x: x + currentTarget.nextSibling.clientWidth
+        }))
+    };
+
+    onNext = (e) => {
+        const currentTarget = e.currentTarget;
+
+        this.setState(({x}) => ({
+            x: x - (currentTarget.previousSibling.clientWidth)
         }))
         
         console.log('currentTarget.previousSibling.clientWidth', currentTarget.previousSibling.clientWidth)
         console.log('currentTarget.previousSibling', currentTarget.previousSibling)
         console.log('currentTarget', currentTarget)
-    }
+    };
 
     render = () => {
         const {x} = this.state;
 
         return <React.Fragment>
+            <ButtonSlider onClick={this.onPrev}>
+                prev
+            </ButtonSlider>
             <Wrapper>
-                {/*<ButtonSlider onClick={this.onClick}>*/}
-                {/*    prev*/}
-                {/*</ButtonSlider>*/}
                 <Row propX={x}>
                     <Slide color='red'></Slide>
                     <Slide color='green'></Slide>
                     <Slide color='blue'></Slide>
                 </Row>
-                <ButtonSlider onClick={this.onClick}>
-                    next
-                </ButtonSlider>
             </Wrapper>
+            <ButtonSlider onClick={this.onNext}>
+                next
+            </ButtonSlider>
         </React.Fragment>
 
     }
@@ -51,3 +59,39 @@ export default Slider
 //         console.log('sliderNode', sliderNode.clientWidth);
 //     }
 //Таким образом можно получать и смотреть  свойства компонента, которыми потом нужно манипулдировать
+
+
+
+//{this.onNext} {this.onPrev}
+//указывает на кастомный метод, который срабатывает по клику
+
+
+
+
+//Если копки-клики за Wrapper`ом, то
+//        this.setState(({x}) => ({
+//             x: x - (currentTarget.previousSibling.clientWidth)
+//         }))
+
+
+//Если копки-клики во Wrapper, то
+// this.setState(({x}) => ({
+//     x: x - (currentTarget.previousSibling.childNodes[0].clientWidth)
+// }))
+
+
+// return <React.Fragment>
+//     <ButtonSlider onClick={this.onPrev}>
+//         prev
+//     </ButtonSlider>
+//     <Wrapper>
+//         <Row propX={x}>
+//             <Slide color='red'></Slide>
+//             <Slide color='green'></Slide>
+//             <Slide color='blue'></Slide>
+//         </Row>
+//     </Wrapper>
+//     <ButtonSlider onClick={this.onNext}>
+//         next
+//     </ButtonSlider>
+// </React.Fragment>
