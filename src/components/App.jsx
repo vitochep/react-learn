@@ -16,9 +16,6 @@ class App extends React.Component {
 
 		</Slider>
 
-
-
-
 		// return names.map((moduleName, i) => {
 		// 	const Component = routes[moduleName];
 		//

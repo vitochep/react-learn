@@ -22,7 +22,6 @@ const width=this.nodeRef
             .clientWidth;
 
             this.nodeRef.style.width= width + 'px';
-
 };
 
     render = () => {

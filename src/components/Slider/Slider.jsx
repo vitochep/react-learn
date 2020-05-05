@@ -13,7 +13,7 @@ class Slider extends React.PureComponent {
         const currentTarget = e.currentTarget;
 
         this.setState(({x}) => ({
-            x: x - currentTarget.previousSibling.clientWidth
+            x: x - (currentTarget.previousSibling.clientWidth)
         }))
     }
 
@@ -22,9 +22,9 @@ class Slider extends React.PureComponent {
 
         return <React.Fragment>
             <Wrapper>
-                <ButtonSlider onClick={this.onClick}>
-                    prev
-                </ButtonSlider>
+                {/*<ButtonSlider onClick={this.onClick}>*/}
+                {/*    prev*/}
+                {/*</ButtonSlider>*/}
                 <Row x={x}>
                     <Slide color='red'></Slide>
                     <Slide color={'green'}></Slide>
