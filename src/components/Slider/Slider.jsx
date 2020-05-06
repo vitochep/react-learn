@@ -25,11 +25,17 @@ class Slider extends React.PureComponent {
         const currentTarget = e.currentTarget;
 
         this.setState((currentState) => {
-            const newValue = currentState - currentTarget.previousSibling.clientWidth;
-            const rowWidth = currentTarget.previousSibling.childNodes[0].clientWidth;
-            return {
-                x: currentState - currentTarget.previousSibling.clientWidth
-            }
+            const newValue =  currentState.x - currentTarget.previousSibling.clientWidth;
+            const rowWidth = -currentTarget.previousSibling.childNodes[0].clientWidth;
+
+            console.log('newValue', newValue)
+            console.log('rowWidth', rowWidth)
+
+            return newValue > rowWidth
+                ? {
+                    x: newValue
+                }
+                : currentState
 
         })
 
@@ -127,3 +133,31 @@ export default Slider
 //             : currentState
 //     })
 // };
+
+
+
+// this.setState((currentState) => {
+//     const newValue =  currentState.x - currentTarget.previousSibling.clientWidth;
+//     const rowWidth = -currentTarget.previousSibling.childNodes[0].clientWidth;
+//
+//     console.log('newValue', newValue)
+//     console.log('rowWidth', rowWidth)
+//
+//     return newValue > rowWidth
+//         ? {
+//             x: newValue
+//         }
+//         : currentState
+//
+// })
+
+//newValue -  слайд смещается влево. currentState становится меньше 0.
+//rowWidth - ширина всех 3-х(в данном примере) слайдов. С минусом (например -4266), потому что
+// по условию
+
+//     return newValue > rowWidth // если смещённый слайд больше rowWidth,
+//                                   т.е. например (-1422)>(-4266)
+//         ? {
+//             x: newValue            то выводить новое значение
+//         }
+//         : currentState              в противном случае текущее состояние
