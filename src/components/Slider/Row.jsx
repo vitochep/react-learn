@@ -13,7 +13,6 @@ const Row = styled(Block)`
 
 export default Row;
 
-
 //У каждого компонента есть свои пропсы - параметры.
 //Их можно посмотреть, например, ${(props)=> console.log('props', props )}
 //Если у компонента есть дочерние элементы, как у Row есть компоненты Slide,
@@ -29,3 +28,6 @@ export default Row;
 //
 // 	${func}
 // `;
+
+//	width: ${({ children }) => children.length * 100}%
+//Длина чилдренов (children.length) это их кколичество в массиве
