@@ -9,35 +9,50 @@ class Slider extends React.PureComponent {
         x: 0,
     };
 
+    enableClick = true;
+
     onPrev = (e) => {
         const currentTarget = e.currentTarget;
+        if (this.enableClick) {
+            this.enableClick = false;
+            this.setState((currentState) => {
+                return currentState.x < 0
+                    ? {
+                        x: currentState.x + currentTarget.nextSibling.clientWidth
+                    }
+                    : currentState
+            })
 
-        this.setState((currentState) => {
-            return currentState.x < 0
-                ? {
-                    x: currentState.x + currentTarget.nextSibling.clientWidth
-                }
-                : currentState
-        })
+            setTimeout(() => {
+                this.enableClick = true;
+            }, 800)
+        }
     };
 
     onNext = (e) => {
         const currentTarget = e.currentTarget;
+        if (this.enableClick) {
+            this.enableClick = false;
+            this.setState((currentState) => {
+                const newValue = currentState.x - currentTarget.previousSibling.clientWidth;
+                const rowWidth = -currentTarget.previousSibling.childNodes[0].clientWidth;
 
-        this.setState((currentState) => {
-            const newValue =  currentState.x - currentTarget.previousSibling.clientWidth;
-            const rowWidth = -currentTarget.previousSibling.childNodes[0].clientWidth;
+                console.log('newValue', newValue)
+                console.log('rowWidth', rowWidth)
 
-            console.log('newValue', newValue)
-            console.log('rowWidth', rowWidth)
+                return newValue > rowWidth
+                    ? {
+                        x: newValue
+                    }
+                    : currentState
 
-            return newValue > rowWidth
-                ? {
-                    x: newValue
-                }
-                : currentState
+            });
 
-        })
+            setTimeout(() => {
+                this.enableClick = true;
+            }, 800)
+        }
+
 
         console.log('currentTarget.previousSibling.clientWidth', currentTarget.previousSibling.clientWidth)
         console.log('currentTarget.previousSibling', currentTarget.previousSibling)
@@ -134,8 +149,6 @@ export default Slider
 //     })
 // };
 
-
-
 // this.setState((currentState) => {
 //     const newValue =  currentState.x - currentTarget.previousSibling.clientWidth;
 //     const rowWidth = -currentTarget.previousSibling.childNodes[0].clientWidth;
@@ -161,3 +174,28 @@ export default Slider
 //             x: newValue            то выводить новое значение
 //         }
 //         : currentState              в противном случае текущее состояние
+
+
+//Включение активного состояния следущего клика только после того,
+// как включился следущий слайд.
+
+//enableClick = true;
+
+//  if (this.enableClick) {  При срабатывании события клик, если enableClick существует,
+//    this.enableClick=false;  что по-умолчанию так, то сделать его false
+//     this.setState((currentState) => {
+//     const newValue = currentState.x - currentTarget.previousSibling.clientWidth;
+//      const rowWidth = -currentTarget.previousSibling.childNodes[0].clientWidth;
+//
+//      return newValue > rowWidth
+//         ? {
+//             x: newValue
+//           }
+//            : currentState
+//             });
+//
+//      setTimeout(()=>{          В то время, как переключается слайд(за 800мс по transition анимации),
+//         this.enableClick=true; изненение состояния setState по клику не активно.
+//      }, 800)                    Оно станет активным (  this.enableClick=true;),
+//                                когда пройдёт (в данном примере) 800мс и слайд включится.
+//         }
