@@ -1,27 +1,51 @@
 import React from 'react';
-// import * as routes from './../routes/index.js';
+import {
+	BrowserRouter,
+	Switch,
+	Route,
+	Link,
+} from 'react-router-dom';
+import Account from 'routes/Account';
+import Main from 'routes/Main';
+// import News from 'routes/News';
 import './../app.scss';
-import Slider from "./Slider";
+// import Slider from "./Slider";
 
-
-// const names = [
-// 	'Main',
-// 	'Account',
-// ];
 
 class App extends React.Component {
 	render = () => {
-
-		return <Slider>
-
-		</Slider>
-
-		// return names.map((moduleName, i) => {
-		// 	const Component = routes[moduleName];
-		//
-		// 	return <Component key={i} />;
-		//
-		// });
+		return <React.Fragment>
+			<BrowserRouter>
+				<Switch>
+					<Route exact path="/">
+						<Main />
+					</Route>
+					{/*<Route exact path="/news">*/}
+					{/*	<News />*/}
+					{/*</Route>*/}
+					<Route path="/account">
+						<Switch>
+							<Route path="/account/test">
+								Test
+							</Route>
+							<Route path="/">
+								<Account />
+							</Route>
+						</Switch>
+					</Route>
+				</Switch>
+				<h1>
+					<Link to="/account">
+						To account
+					</Link>
+				</h1>
+				<h1>
+					<Link to="/">
+						To main
+					</Link>
+				</h1>
+			</BrowserRouter>
+		</React.Fragment>;
 	};
 };
 
