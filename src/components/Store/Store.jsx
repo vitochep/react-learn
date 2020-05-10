@@ -1,7 +1,7 @@
 import React from 'react';
 
-// Подключение базы данных - хранилища из библиотеки redux
-import { 
+// Подключение базы данных - createStore хранилища  из библиотеки redux
+import {                   //combineReducers - сборщика reducers
 	createStore,
 	combineReducers, 
 	applyMiddleware,
@@ -20,13 +20,22 @@ const testMiddleware = (store) => {
 	};
 };
 
+
+setTimeout(()=>{
+	store.dispatch({   //пример измнения состояния
+		type: "UPDATE",
+		payload:{
+			email:'test@gmail.com',
+			name:'Vito'
+		}
+	})
+}, 4000)
+
 //создание хранилища store и привязка к нему reducers и Middleware
 //combineReducers  - собирает все редьюсеры в одну кучу.
 const store = createStore(combineReducers(reducers), undefined, applyMiddleware(thunk, testMiddleware));
 
 class Provider extends React.PureComponent {
-
-
 	render = () => {
 		const { children } = this.props;
 
@@ -47,22 +56,22 @@ export {
 // const store=createStore(combineReducers(reducers));
 // console.log('createStore', reducers);
 
-// console.log('store', store); // Непосредственнно база данных
+console.log('store', store); // Непосредственнно база данных
 //Содержит в себе функции, которыми надо пользоваться:
 //dispatch - изменение состония
-//getStore - получить текущее состояние
+//getState - получить текущее состояние
 //subscribe - подписка на состояние
 
 
 //Пример использования dispatch и getState
-// setTimeout(()=>{
-// store.dispatch({type:"TABLET"})
-// },2000);
-//
-// setTimeout(()=>{
-// console.log('TABLET', store.getState())
-// },3000);
-//
-// console.log('store', store.getState());
+setTimeout(()=>{
+store.dispatch({type:"TABLET"})
+},2000);
+
+setTimeout(()=>{
+console.log('TABLET', store.getState())
+},3000);
+
+console.log('getStateinTimeout', store.getState());
 
 

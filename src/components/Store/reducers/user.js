@@ -16,7 +16,7 @@ const user = (state = defaultState, action) => {
         case 'UPDATE':
             return {
                 ...state,
-                ...action.payload,
+                ...action.payload, //payload (полезная нагрузка) перезаписывает state
             };
 
         default:

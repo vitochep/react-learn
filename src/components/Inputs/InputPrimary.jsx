@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-const Input = styled.input`
+const InputPrimary = styled.input`
     display:          block;
     width:            100%;
     height:           50px;
@@ -16,4 +16,4 @@ const Input = styled.input`
 `;
 
 
-export default Input
+export default InputPrimary
