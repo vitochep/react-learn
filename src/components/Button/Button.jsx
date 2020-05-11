@@ -3,10 +3,6 @@ import styled from 'styled-components';
 
 
 const Button = styled.div`
-    max-width:        300px;
-    height:           40px;
-    font-size:        16px;
-
     font-weight:      bold;
     line-height:      20px;
     color:            #fff;

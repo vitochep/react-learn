@@ -72,6 +72,7 @@ setTimeout(()=>{
 console.log('TABLET', store.getState())
 },3000);
 
+
 console.log('getStateinTimeout', store.getState());
 
 

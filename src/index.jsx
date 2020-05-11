@@ -3,14 +3,16 @@ import ReactDOM from 'react-dom';
 import App from './components/App.jsx';
 import { Provider as StoreProvider } from 'components/Store';
 
-// import { ThemeProvider } from 'styled-components'; //Подключение для
-// import * as theme from 'theme';    // использования тем
+import { ThemeProvider } from 'styled-components';  //Подключение для
+import * as theme from 'theme';                     // использования тем
 
 
 
 ReactDOM.render(
     <StoreProvider>
-        <App />
+        <ThemeProvider theme={theme}>
+            <App />
+        </ThemeProvider>
     </StoreProvider>,
     document.getElementById('root')
 );
