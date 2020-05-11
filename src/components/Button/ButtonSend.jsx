@@ -8,7 +8,7 @@ const Wrapper = styled(Button)`
     background-color: #4bd3ef;
     margin-bottom: 40px;
     
-//Передаём во Wrapper tablet и mobile 
+//Передаём во Wrapper tablet и mobile и делаем проверку 
     ${({tablet, mobile, theme}) => {
     const type = tablet
         ? 'primaryMobile'
@@ -53,6 +53,7 @@ const Wrapper = styled(Button)`
 
 //Подключили компонент ButtonSend к хранилищу
 // и пробрасываем в ButtonSend всё, что хранится в state - mobile и tablet
+//их потом использовать в рендере в качестве параметров const {tablet, mobile} = this.props;
 export default connect((state)=>({
 ...state.resolution
 }))(ButtonSend);
