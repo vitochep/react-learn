@@ -44,7 +44,7 @@ export default class ButtonSend extends React.PureComponent {
     };
 
 
-    //Обёрка componentDidMount - для того, чтобы событие не отрисовывалось на других страницах
+    //Обёртка componentDidMount - для того, чтобы событие не отрисовывалось на других страницах
     //(e) => - слушатель - стрелочная функция, а не function (e){} потому, что
     // у стрелочной функции нет контекста this и this.setState может посмотреть наверх на
     //state.

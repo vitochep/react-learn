@@ -9,7 +9,9 @@ import Account from 'routes/Account';
 import Main from 'routes/Main';
 // import News from 'routes/News';
 import './../app.scss';
-import Store from './Store'
+import {changeMobile} from "./Events";
+
+// import Slider from "./Slider";
 
 
 class App extends React.Component {
@@ -20,21 +22,21 @@ class App extends React.Component {
 
             //одновременно с генерацией кастомного события
             //меняется changeMobile на новый flag
-            const tabletFlag = width < 1024 && width > 768;
-            const mobileFlag = width < 768;
+            const newFlag = width < 780;
 
-            //изменение состояния
-            //  если tabletFlag, то передавать 'TABLET'.
-            // в противном случае mobileFlag.
-            //А если mobileFlag, то передавать 'MOBILE'.
-            //в противном случае ничего
-            Store.dispatch({
-                type: tabletFlag
-                    ? 'TABLET'
-                    : mobileFlag
-                     ? 'MOBILE'
-                        : "",
-            })
+            //передётся аргументом true или false - в зависимости от
+            //ширины экрана
+            //Флаг изменится раньше, чем сгенерируется событие
+            changeMobile(newFlag);
+
+            //функция для вызова события, его генерации
+            //customEvent - зарезервированный метод
+            //второй параметр -объект, принимающий в себя detail
+            //detail - зарезервированный параметр который является
+            // зависящим от события значением, связанным с событием.
+            window.dispatchEvent(new CustomEvent('onChangeResolution', {
+                'detail':newFlag
+            }));
         });
     };
     render = () => {

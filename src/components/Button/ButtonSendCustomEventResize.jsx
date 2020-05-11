@@ -1,18 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from './Button';
-import {connect} from 'react-redux'
+
+//Добавляем функцию, которая возвращает isMobile
+import {checkMobile} from 'components/Events';
 
 
 const Wrapper = styled(Button)`
     background-color: #4bd3ef;
     margin-bottom: 40px;
     
-//Передаём во Wrapper tablet и mobile 
-    ${({tablet, mobile, theme}) => {
-    const type = tablet
-        ? 'primaryMobile'
-        : mobile
+    //Темы, записанные в функцию.
+    //Записываем в переменную условие и передаём в темы
+    //Из объекта можно передать через точку или [].
+    //Так, как type это переменная, передаётся через [].
+    //Если бы type был ключ, то было бы .type или ['type'] -  
+    //Пример -  {theme.buttons.primaryDesktop.fontSize};
+    ${({theme}) => {
+        
+        //Проверка на isMobile через функцию checkMobile(), которая isMobile возвращает
+    const type = checkMobile()
         ? 'primaryMobile'
         : 'primaryDesktop'
     return `
@@ -31,28 +38,19 @@ const Wrapper = styled(Button)`
 
 //Здесь PureComponent для того, чтобы когда происходил resize
 //экрана в пределах, например, мобилки, то render не отрисовывал true на true
- class ButtonSend extends React.PureComponent {
+export default class ButtonSend extends React.PureComponent {
+
 
     //Добавляем кастомное событие, по которому делается обновление resize
     componentDidMount = () => {
         window.addEventListener('onChangeResolution', (e) => {
-            console.log('e.detail', e.detail);
+            console.log('e.detail', e.detail)
             this.forceUpdate();
         });
     };
     render = () => {
-        const {tablet, mobile} = this.props;
-        console.log('this.props у ButtonSend', this.props)
-        return <Wrapper
-        mobile={mobile}
-        tablet={tablet}>
+        return <Wrapper>
             Отправить
         </Wrapper>;
     };
 }
-
-//Подключили компонент ButtonSend к хранилищу
-// и пробрасываем в ButtonSend всё, что хранится в state - mobile и tablet
-export default connect((state)=>({
-...state.resolution
-}))(ButtonSend);
