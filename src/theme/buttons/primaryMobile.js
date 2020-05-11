@@ -1,5 +1,5 @@
 
-export const width = '80px';
-export const fontSize = '16px';
+export const width = '150px';
+export const fontSize = '12px';
 export const lineHeight = '16px';
 
