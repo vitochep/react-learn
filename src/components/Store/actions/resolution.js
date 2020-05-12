@@ -1,7 +1,8 @@
-import Store from 'components/Store'
 
-const resolution = () =>{
-    window.addEventListener('resize', (e) => {
+const resolution = (e) =>(dispatch)=>{
+    //Происходит корированная функция из-за bindActionCreators.
+    // dispatch в аргументе - это изменение состояния ниже.
+
         const width = e.currentTarget.innerWidth;
 
         //одновременно с генерацией кастомного события
@@ -14,14 +15,13 @@ const resolution = () =>{
         // в противном случае mobileFlag.
         //А если mobileFlag, то передавать 'MOBILE'.
         //в противном случае ничего
-        Store.dispatch({
+        dispatch({
             type: tabletFlag
                 ? 'TABLET'
                 : mobileFlag
                     ? 'MOBILE'
                     : "",
         })
-    });
 }
 
 export default resolution

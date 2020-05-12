@@ -33,13 +33,6 @@ const Wrapper = styled(Button)`
 //экрана в пределах, например, мобилки, то render не отрисовывал true на true
  class ButtonSend extends React.PureComponent {
 
-    //Добавляем кастомное событие, по которому делается обновление resize
-    componentDidMount = () => {
-        window.addEventListener('onChangeResolution', (e) => {
-            console.log('e.detail', e.detail);
-            this.forceUpdate();
-        });
-    };
     render = () => {
         const {tablet, mobile} = this.props;
         console.log('this.props у ButtonSend', this.props)
@@ -54,6 +47,7 @@ const Wrapper = styled(Button)`
 //Подключили компонент ButtonSend к хранилищу
 // и пробрасываем в ButtonSend всё, что хранится в state - mobile и tablet
 //их потом использовать в рендере в качестве параметров const {tablet, mobile} = this.props;
+//Этот state по технологии redux должен хранится в action
 export default connect((state)=>({
 ...state.resolution
 }))(ButtonSend);
