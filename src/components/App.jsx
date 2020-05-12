@@ -9,34 +9,17 @@ import Account from 'routes/Account';
 import Main from 'routes/Main';
 // import News from 'routes/News';
 import './../app.scss';
-import Store from './Store'
+import { resolution } from 'components/Store/actions';
 
 
 class App extends React.Component {
 
     componentDidMount = () => {
-        window.addEventListener('resize', (e) => {
-            const width = e.currentTarget.innerWidth;
-
-            //одновременно с генерацией кастомного события
-            //меняется changeMobile на новый flag
-            const tabletFlag = width < 1024 && width > 768;
-            const mobileFlag = width < 768;
-
-            //изменение состояния
-            //  если tabletFlag, то передавать 'TABLET'.
-            // в противном случае mobileFlag.
-            //А если mobileFlag, то передавать 'MOBILE'.
-            //в противном случае ничего
-            Store.dispatch({
-                type: tabletFlag
-                    ? 'TABLET'
-                    : mobileFlag
-                     ? 'MOBILE'
-                        : "",
-            })
-        });
+        window.addEventListener('resize', resolution) //вторым параметром сюда передаётся action в котором
+                                                           // описано изменение состояния по resize
     };
+
+
     render = () => {
         return <React.Fragment>
             <BrowserRouter>
