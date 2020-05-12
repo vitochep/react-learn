@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import Account from 'routes/Account';
 import Main from 'routes/Main';
-// import News from 'routes/News';
+import News from 'routes/News';
 import './../app.scss';
 import { bindActionCreators } from 'redux' //Подключение функции для создания action
 import { connect } from 'react-redux';
@@ -31,9 +31,9 @@ class App extends React.Component {
                     <Route exact path="/">
                         <Main/>
                     </Route>
-                    {/*<Route exact path="/news">*/}
-                    {/*	<News />*/}
-                    {/*</Route>*/}
+                    <Route exact path="/news">
+                    	<News />
+                    </Route>
                     <Route path="/account">
                         <Switch>
                             <Route path="/account/test">

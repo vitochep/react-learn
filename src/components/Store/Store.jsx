@@ -1,7 +1,8 @@
 import React from 'react';
 
 // Подключение базы данных - createStore хранилища  из библиотеки redux
-import {                   //combineReducers - сборщика reducers
+//combineReducers - сборщика reducers
+import {
 	createStore,
 	combineReducers, 
 	applyMiddleware, //импорт мидлвара
