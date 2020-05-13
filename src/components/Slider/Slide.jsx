@@ -16,6 +16,7 @@ class Slide extends React.PureComponent {
 
     componentDidMount = () => {
 
+        //Получаем ширину одного слайда, т.е Wrapperё'а, в котором Row
         const width = this.nodeRef
             .parentNode
             .parentNode

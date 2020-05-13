@@ -55,6 +55,11 @@ class App extends React.Component {
                         To main
                     </Link>
                 </h1>
+                <h1>
+                    <Link to="/news">
+                        To news
+                    </Link>
+                </h1>
             </BrowserRouter>
         </React.Fragment>;
     };

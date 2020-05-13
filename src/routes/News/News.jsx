@@ -45,8 +45,8 @@ class News extends React.Component {
     };
 };
 
-export default connect((store) => ({
-    data: store.news,
-}), (dispatch) => ({
+export default connect((store) => {
+    return {data: store.news}   //Здесь возвращаем объект, поэтому такой синтаксис
+}, (dispatch) => ({    //Здесь тоже возвращается объект, но сокращённая форма записи  - без return и в круглых скобках
     news: bindActionCreators(news, dispatch)
 }))(News);

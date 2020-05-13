@@ -57,5 +57,4 @@ class App extends React.Component {
         </React.Fragment>;
     };
 };
-console.log('dffgfffffffffffffffffffffffffffffffffffff')
 export default App
