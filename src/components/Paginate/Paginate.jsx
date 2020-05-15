@@ -4,8 +4,8 @@ import Button  from 'components/Button';
 
 class Paginate extends React.PureComponent {
 	static defaultProps = {
-		func: () => {}, //объявили пропсы
-		index: 1,
+		func: () => {}, //объявили пропсы.Этот func объявлен в компоненте Paginate в роуте News.В него записана функция
+		index: 1, //get, которая получает данные из хранилища
 		limit: 10,
 	};
 
@@ -39,7 +39,7 @@ class Paginate extends React.PureComponent {
 			this.props.func(indexPage, (total, callback) => {
 				this.setState((currentState) => ({
 					...currentState,
-					total,
+					total, //значение total из базы данных, т.к. this.setState - это return  функции this.props.func, которая параметром этот total прнимает
                     index:indexPage,
 				}), callback)   //в this.setState - второй параметр callback, который безымянный из action, и который возвращает dispatch
 			});

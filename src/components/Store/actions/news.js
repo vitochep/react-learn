@@ -7,6 +7,7 @@ export const get = function (page, callback) {
 
             //функция с await axios позволяет создавать промисы, при которых
             // callback и в нём dispatch не выполнится до тех пор, пока с базы не придут все запрашиваемыке данные
+            //выттаскивает из data items и total
             const {data: {items, total}} = await axios.get('http://127.0.0.1:3006/news/' + page);
 
             //Далее вызывается функция callback, которая содержит в себе аргументы - total(общее кол-во новостей) и ещё
