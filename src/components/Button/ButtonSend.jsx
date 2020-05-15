@@ -35,7 +35,7 @@ const Wrapper = styled(Button)`
 
     render = () => {
         const {tablet, mobile} = this.props;
-        console.log('this.props у ButtonSend', this.props)
+        console.log('this.props у ButtonSend', this.props);
         return <Wrapper
         mobile={mobile}
         tablet={tablet}>

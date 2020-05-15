@@ -1,9 +1,8 @@
 
-import Content from './Content.jsx';
 import Flex from './Flex.jsx';
-
-export default Content
+import Content from './Content.jsx';
+export default Flex
 
 export{
-    Flex
+    Content
 }

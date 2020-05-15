@@ -1,18 +1,33 @@
- export const get=()=>(dispatch)=>{
+import axios from 'axios';
 
-    //ссылка по которой приходит ответ с новостями
-const responce=fetch('http://127.0.0.1:3006/news');
+export const get = function (page, callback) {
+    return async (dispatch) => {
+        try {
 
+            //функция с await axios позволяет создавать промисы, при которых
+            // callback и в нём dispatch не выполнится до тех пор, пока с базы не придут все запрашиваемыке данные
+            const {data: {items, total}} = await axios.get('http://127.0.0.1:3006/news/' + page);
 
-     //в ответе содержатся промисы
-     console.log("responce", responce);
+            //Далее вызывается функция,
+            callback(total, () => {
+                dispatch({
+                    type: 'SET_NEWS',
+                    payload: items,
+                });
+            });
 
-     //then - функция, ожидающая ответ от fetch. Это и есть асинхронность.
-     responce.then((data)=>{
-         data.text().then((data)=>{
-             console.log('data', data)
-         })
-     })
+            // axios.get('http://127.0.0.1:3006/news/' + page)
+            //     .then(({data: {items, total}}) => {
+            //         callback(total, () => {
+            //             dispatch({
+            //                 type: 'SET_NEWS',
+            //                 payload: items,
+            //             });
+            //         });
+            //     });
+        }
+        catch (err) {
+            console.log('err', err.message, err);
+        }
+    }
 };
-
-
