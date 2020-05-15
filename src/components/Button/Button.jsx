@@ -1,11 +1,11 @@
 
 import styled from 'styled-components';
 
-
+//если компонент только стилевой, без рэндера, то деструктуризировать его импортом из index.js в другом компоненте нельзя
 const Button = styled.div`
     font-weight:      bold;
     line-height:      20px;
-    color:            #fff;
+    color:            #000000;
 
     border-radius:    5px;
 

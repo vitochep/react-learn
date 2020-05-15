@@ -1,6 +1,6 @@
 import React from 'react';
 import Loader from 'components/Loader';
-import Button from 'components/Button';
+import Button  from 'components/Button';
 
 class Paginate extends React.PureComponent {
 	static defaultProps = {
@@ -68,7 +68,7 @@ class Paginate extends React.PureComponent {
 				while (i < pages) {
 					const index = i + 1;
 
-					collector.push(<Button 
+					collector.push(<Button
 						key={i}
 						onClick={this.onPage(index)}>
 						{index}
