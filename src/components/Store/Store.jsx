@@ -62,6 +62,7 @@ export {
 //getState - получить текущее состояние
 //subscribe - подписка на состояние
 console.log('store', store);
+console.log(store.getState)
 
 
 //Примеры использования dispatch и getState

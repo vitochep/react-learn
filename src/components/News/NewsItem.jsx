@@ -35,8 +35,12 @@ const Wrapper = styled.div`
 	}
 	
 `;
-
 class NewsItem extends React.Component {
+
+
+    //объявляем const тех ключей, которые есть в объектах базы данных. Один объект - одна новость.
+    // И деструктуризируем их из this.props.newsItem. newsItem -  получаем из  главного файла routes/News/NewsItem, где
+    //просходит перебор этих item в map
 
     render = () => {
         const {
@@ -46,6 +50,7 @@ class NewsItem extends React.Component {
             published,
             category
         } = this.props.newsItem;
+
 
         return <Wrapper id={id}>
             <NewsItemHeader>
